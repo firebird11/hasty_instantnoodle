@@ -15368,6 +15368,9 @@ static void hdd_set_adapter_wlm_def_level(struct hdd_context *hdd_ctx)
 					   dbgid) {
 		adapter->latency_level =
 				cfg_get(hdd_ctx->psoc, CFG_LATENCY_LEVEL);
++		adapter->upgrade_udp_qos_threshold = QCA_WLAN_AC_BK;
++		hdd_debug("UDP packets qos reset to: %d",
++			  adapter->upgrade_udp_qos_threshold);
 		hdd_adapter_dev_put_debug(adapter, dbgid);
 	}
 }
